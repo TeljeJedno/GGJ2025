@@ -71,6 +71,22 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_x7yg2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g16de")
 text = "Start"
 
+[node name="Button1" type="Button" parent="VBoxContainer/Button1"]
+offset_left = 668.0
+offset_top = -203.5
+offset_right = 722.0
+offset_bottom = -171.5
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0.878431, 0, 0.454902, 1)
+theme_override_colors/font_pressed_color = Color(0.878431, 0, 0.454902, 1)
+theme_override_colors/font_focus_color = Color(0.878431, 0, 0.454902, 1)
+theme_override_colors/font_color = Color(0.877106, 0, 0.45465, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/hover = SubResource("StyleBoxFlat_8oita")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x7yg2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_g16de")
+text = "Start"
+
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
