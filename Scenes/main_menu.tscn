@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cc5p0efle6pk2"]
 
-[ext_resource type="Texture2D" uid="uid://milf482l1j1a" path="res://Assets/bgtexture.png" id="1_8jikj"]
+[ext_resource type="Texture2D" uid="uid://gx3fdkljcy3n" path="res://Assets/mainmenutexture.png" id="1_3r3tb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ackqy"]
-texture = ExtResource("1_8jikj")
+texture = ExtResource("1_3r3tb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8oita"]
 bg_color = Color(1, 0.667209, 0.629078, 1)
