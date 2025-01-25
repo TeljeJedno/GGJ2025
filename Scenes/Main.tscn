@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://uakoctin7pin"]
+[gd_scene load_steps=2 format=3 uid="uid://uakoctin7pin"]
+
+[ext_resource type="Texture2D" uid="uid://milf482l1j1a" path="res://Assets/bgtexture.png" id="1_nt226"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Bgtexture" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_nt226")
+
+[node name="Camera2D" type="Camera2D" parent="."]
