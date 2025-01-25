@@ -3,6 +3,8 @@ extends Control
 
 @onready var timer:Timer =  $Timer
 @onready var label_rating:Label =  $Label
+@onready var label_upgdg:Label =  $UpgradeDowngrade
+
 var RATING:float = 100
 var upgradeRate:float = 0
 var downgradeRate:float = 0
@@ -17,7 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	label_upgdg.text = "Upgrade: " + ("%.2f" % upgradeRate) + " Downgrade: " + ("%.2f" % downgradeRate)
+	
 
 
 func _on_timer_timeout():

@@ -34,22 +34,27 @@ offset_bottom = 130.0
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="Button2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Button3" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+text = "Sandwich"
 
 [node name="Button4" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Bots"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Fake News"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Fake TV"
 
 [node name="Button5" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "Opposition"
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer"]
 layout_mode = 2
@@ -67,5 +72,16 @@ offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2
 text = "Rating: "
+
+[node name="UpgradeDowngrade" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = " Upgrade - Downgrade -"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
