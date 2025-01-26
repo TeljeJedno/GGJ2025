@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uakoctin7pin"]
+[gd_scene load_steps=15 format=3 uid="uid://uakoctin7pin"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_gtgho"]
 [ext_resource type="Texture2D" uid="uid://c2p4qa3kc0rv4" path="res://Assets/Square_green.png" id="2_6wx6u"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ci6yxcn3o2gn3" path="res://Assets/Square_green copy.png" id="3_foy1x"]
 [ext_resource type="Texture2D" uid="uid://dobs4q2408bd2" path="res://Assets/sandw.png" id="4_nuhi6"]
 [ext_resource type="Texture2D" uid="uid://derf7ww7p8ms" path="res://Assets/pol.png" id="6_a1f4o"]
+[ext_resource type="Texture2D" uid="uid://bssjfd42pm0wk" path="res://Assets/newspaper.png" id="6_c36pv"]
+[ext_resource type="Texture2D" uid="uid://c7m2c77g344yi" path="res://Assets/Square_1.png" id="7_eejei"]
+[ext_resource type="Texture2D" uid="uid://cyuhfmhju66de" path="res://Assets/cam.png" id="7_pgm81"]
+[ext_resource type="Texture2D" uid="uid://11csacoomvmi" path="res://Assets/money.png" id="8_pab8p"]
+[ext_resource type="Texture2D" uid="uid://j6uykaj86f7x" path="res://Assets/Square_1_c.png" id="10_fshje"]
 
 [sub_resource type="Gradient" id="Gradient_88sva"]
 colors = PackedColorArray(0.912303, 0.396065, 0.405357, 1, 0.911639, 0.801406, 0.347146, 1)
@@ -15,8 +20,6 @@ gradient = SubResource("Gradient_88sva")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dou08"]
 texture = SubResource("GradientTexture1D_ntu7k")
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jje61"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -43,7 +46,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_dou08")
 layout_mode = 2
 offset_left = 15.0
 offset_top = 49.0
-offset_right = 174.0
+offset_right = 222.0
 offset_bottom = 130.0
 texture_normal = ExtResource("2_6wx6u")
 texture_pressed = ExtResource("3_foy1x")
@@ -109,6 +112,150 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10.00$"
+vertical_alignment = 2
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 14.0
+offset_top = 138.0
+offset_right = 225.0
+offset_bottom = 219.0
+texture_normal = ExtResource("2_6wx6u")
+texture_pressed = ExtResource("3_foy1x")
+stretch_mode = 0
+script = ExtResource("2_eutyo")
+
+[node name="GridContainer" type="GridContainer" parent="Button2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -35.5
+offset_right = 72.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Panel" type="AspectRatioContainer" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment_vertical = 0
+
+[node name="Icon" type="TextureRect" parent="Button2/GridContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("6_c36pv")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "RPS:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Item1" type="Label" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.1"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Count:"
+vertical_alignment = 2
+
+[node name="Item2" type="Label" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+vertical_alignment = 2
+
+[node name="Item3" type="Label" parent="Button2/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1000.00$"
+vertical_alignment = 2
+
+[node name="Button3" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 231.0
+offset_right = 223.0
+offset_bottom = 312.0
+texture_normal = ExtResource("2_6wx6u")
+texture_pressed = ExtResource("3_foy1x")
+stretch_mode = 0
+script = ExtResource("2_eutyo")
+
+[node name="GridContainer" type="GridContainer" parent="Button3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -35.5
+offset_right = 72.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Panel" type="AspectRatioContainer" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment_vertical = 0
+
+[node name="Icon" type="TextureRect" parent="Button3/GridContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("7_pgm81")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "RPS:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Item1" type="Label" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.1"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Count:"
+vertical_alignment = 2
+
+[node name="Item2" type="Label" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+vertical_alignment = 2
+
+[node name="Item3" type="Label" parent="Button3/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "12000.00$"
 vertical_alignment = 2
 
 [node name="Rating" type="ProgressBar" parent="."]
@@ -183,47 +330,15 @@ offset_bottom = 572.655
 theme_override_font_sizes/font_size = 51
 text = "Press for a quick Lie"
 
-[node name="MoneyButton" type="TextureButton" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 127.0
-offset_top = 372.0
-offset_right = 235.0
-offset_bottom = 459.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = SubResource("PlaceholderTexture2D_jje61")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MoneyButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -11.5
-offset_right = 31.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "MONET
-"
-
 [node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -41.0
-offset_right = 133.0
-offset_bottom = -1.0
+offset_left = 36.0
+offset_top = -105.0
+offset_right = 168.0
+offset_bottom = -65.0
 grow_vertical = 0
 text = "100 $"
 horizontal_alignment = 1
@@ -234,8 +349,38 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Square1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 820.0
+offset_right = 470.0
+offset_bottom = 911.0
+scale = Vector2(1.52, 1.48148)
+texture_normal = ExtResource("7_eejei")
+texture_pressed = ExtResource("10_fshje")
+stretch_mode = 0
+
+[node name="MoneyButton" type="TextureRect" parent="Square1"]
+custom_minimum_size = Vector2(5.505, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.8421
+offset_top = 9.45
+offset_right = -11.1579
+offset_bottom = -13.55
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_pab8p")
+expand_mode = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="buttonPressParam" from="Button1" to="." method="_on_texture_button_button_press_param"]
 [connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
+[connection signal="buttonPressParam" from="Button2" to="." method="_on_texture_button_button_press_param"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
+[connection signal="buttonPressParam" from="Button3" to="." method="_on_texture_button_button_press_param"]
+[connection signal="pressed" from="Button3" to="Button3" method="_on_pressed"]
 [connection signal="pressed" from="PoliticanButton" to="." method="_on_politican_button_pressed"]
-[connection signal="pressed" from="MoneyButton" to="." method="_on_money_button_pressed"]
+[connection signal="pressed" from="Square1" to="." method="_on_money_button_pressed"]
