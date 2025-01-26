@@ -1,14 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://uakoctin7pin"]
+[gd_scene load_steps=11 format=3 uid="uid://uakoctin7pin"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_gtgho"]
+[ext_resource type="Texture2D" uid="uid://c2p4qa3kc0rv4" path="res://Assets/Square_green.png" id="2_6wx6u"]
 [ext_resource type="Script" path="res://Scripts/texture_button.gd" id="2_eutyo"]
-[ext_resource type="Texture2D" uid="uid://dgyypc6f4ogf" path="res://icon.svg" id="2_w1gte"]
+[ext_resource type="Texture2D" uid="uid://ci6yxcn3o2gn3" path="res://Assets/Square_green copy.png" id="3_foy1x"]
+[ext_resource type="Texture2D" uid="uid://dobs4q2408bd2" path="res://Assets/sandw.png" id="4_nuhi6"]
+[ext_resource type="Texture2D" uid="uid://derf7ww7p8ms" path="res://Assets/pol.png" id="6_a1f4o"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbsn"]
+[sub_resource type="Gradient" id="Gradient_88sva"]
+colors = PackedColorArray(0.912303, 0.396065, 0.405357, 1, 0.911639, 0.801406, 0.347146, 1)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ei1we"]
-width = 120
-height = 120
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ntu7k"]
+gradient = SubResource("Gradient_88sva")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dou08"]
+texture = SubResource("GradientTexture1D_ntu7k")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_jje61"]
 
@@ -31,57 +37,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2fbsn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_dou08")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 136.0
-offset_bottom = 556.0
-theme_override_constants/separation = 20
-
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="Button1" type="TextureButton" parent="."]
 layout_mode = 2
-action_mode = 0
-texture_normal = SubResource("NoiseTexture2D_ei1we")
+offset_left = 15.0
+offset_top = 49.0
+offset_right = 174.0
+offset_bottom = 130.0
+texture_normal = ExtResource("2_6wx6u")
+texture_pressed = ExtResource("3_foy1x")
+stretch_mode = 0
 script = ExtResource("2_eutyo")
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TextureButton"]
+[node name="GridContainer" type="GridContainer" parent="Button1"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -35.5
+offset_right = 72.5
+offset_bottom = 26.5
 grow_horizontal = 2
 grow_vertical = 2
-columns = 2
+columns = 3
 
-[node name="Panel" type="AspectRatioContainer" parent="VBoxContainer/TextureButton/GridContainer"]
+[node name="Panel" type="AspectRatioContainer" parent="Button1/GridContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 alignment_vertical = 0
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TextureButton/GridContainer/Panel"]
+[node name="Icon" type="TextureRect" parent="Button1/GridContainer/Panel"]
 layout_mode = 2
-texture = ExtResource("2_w1gte")
-expand_mode = 1
+texture = ExtResource("4_nuhi6")
+expand_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
+[node name="Label" type="Label" parent="Button1/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "test"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "RPS:"
+horizontal_alignment = 2
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
+[node name="Item1" type="Label" parent="Button1/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "test"
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0.1"
+vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
+[node name="Label2" type="Label" parent="Button1/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "test"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Count:"
+vertical_alignment = 2
+
+[node name="Item2" type="Label" parent="Button1/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+vertical_alignment = 2
+
+[node name="Item3" type="Label" parent="Button1/GridContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10.00$"
+vertical_alignment = 2
 
 [node name="Rating" type="ProgressBar" parent="."]
 layout_mode = 1
@@ -135,29 +163,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -62.5
-offset_top = -132.5
-offset_right = 62.5
-offset_bottom = 132.5
+offset_left = -144.5
+offset_top = -256.0
+offset_right = 144.5
+offset_bottom = 256.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = SubResource("PlaceholderTexture2D_jje61")
+scale = Vector2(0.565, 0.565)
+pivot_offset = Vector2(159.292, 263.717)
+texture_normal = ExtResource("6_a1f4o")
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="PoliticanButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.5
-offset_top = -11.5
-offset_right = 31.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "P0liticar"
+layout_mode = 0
+offset_left = -70.7964
+offset_top = 502.655
+offset_right = 420.204
+offset_bottom = 572.655
+theme_override_font_sizes/font_size = 51
+text = "Press for a quick Lie"
 
 [node name="MoneyButton" type="TextureButton" parent="."]
 layout_mode = 1
@@ -166,10 +190,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 140.0
-offset_top = 384.0
-offset_right = 248.0
-offset_bottom = 471.0
+offset_left = 127.0
+offset_top = 372.0
+offset_right = 235.0
+offset_bottom = 459.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = SubResource("PlaceholderTexture2D_jje61")
@@ -191,7 +215,7 @@ grow_vertical = 2
 text = "MONET
 "
 
-[node name="RichTextLabel" type="Label" parent="."]
+[node name="MoneyLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -201,11 +225,17 @@ offset_top = -41.0
 offset_right = 133.0
 offset_bottom = -1.0
 grow_vertical = 0
-text = "Money: 0$"
+text = "100 $"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer/TextureButton" method="_on_pressed"]
+[connection signal="buttonPressParam" from="Button1" to="." method="_on_texture_button_button_press_param"]
+[connection signal="pressed" from="Button1" to="Button1" method="_on_pressed"]
 [connection signal="pressed" from="PoliticanButton" to="." method="_on_politican_button_pressed"]
 [connection signal="pressed" from="MoneyButton" to="." method="_on_money_button_pressed"]
