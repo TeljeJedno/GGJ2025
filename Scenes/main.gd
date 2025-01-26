@@ -5,6 +5,7 @@ extends Control
 @onready var rating_bar:ProgressBar = $Rating
 @onready var label_upgdg:Label =  $UpgradeDowngrade
 
+
 var RATING:float = 100
 var upgradeRate:float = 0
 var downgradeRate:float = -0.2
@@ -39,8 +40,8 @@ func updateRating():
 	rating_bar.value = RATING
 	rating_bar.get_child(0).text = "%.2f" % rating_bar.value
 
-func _on_texture_button_pressed():
-	print(self.name)
+func _on_texture_button_pressed(button:TextureButton):
+	print("test")
 	pass # Replace with function body.
 
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://uakoctin7pin"]
+[gd_scene load_steps=7 format=3 uid="uid://uakoctin7pin"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_gtgho"]
+[ext_resource type="Script" path="res://Scripts/texture_button.gd" id="2_eutyo"]
+[ext_resource type="Texture2D" uid="uid://dgyypc6f4ogf" path="res://icon.svg" id="2_w1gte"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fbsn"]
 
@@ -43,6 +45,7 @@ theme_override_constants/separation = 20
 layout_mode = 2
 action_mode = 0
 texture_normal = SubResource("NoiseTexture2D_ei1we")
+script = ExtResource("2_eutyo")
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer/TextureButton"]
 layout_mode = 1
@@ -53,10 +56,14 @@ grow_horizontal = 2
 grow_vertical = 2
 columns = 2
 
-[node name="Panel" type="Panel" parent="VBoxContainer/TextureButton/GridContainer"]
+[node name="Panel" type="AspectRatioContainer" parent="VBoxContainer/TextureButton/GridContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+alignment_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TextureButton/GridContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("2_w1gte")
+expand_mode = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
 layout_mode = 2
@@ -67,124 +74,13 @@ text = "test"
 [node name="Label2" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 1
 text = "test"
 
 [node name="Label3" type="Label" parent="VBoxContainer/TextureButton/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-action_mode = 0
-texture_normal = SubResource("NoiseTexture2D_ei1we")
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TextureButton2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer/TextureButton2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label2" type="Label" parent="VBoxContainer/TextureButton2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label3" type="Label" parent="VBoxContainer/TextureButton2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-action_mode = 0
-texture_normal = SubResource("NoiseTexture2D_ei1we")
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TextureButton3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer/TextureButton3/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton3/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label2" type="Label" parent="VBoxContainer/TextureButton3/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label3" type="Label" parent="VBoxContainer/TextureButton3/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="TextureButton4" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-action_mode = 0
-texture_normal = SubResource("NoiseTexture2D_ei1we")
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/TextureButton4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 2
-
-[node name="Panel" type="Panel" parent="VBoxContainer/TextureButton4/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton4/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label2" type="Label" parent="VBoxContainer/TextureButton4/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "test"
-
-[node name="Label3" type="Label" parent="VBoxContainer/TextureButton4/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_vertical = 1
 text = "test"
 
 [node name="Rating" type="ProgressBar" parent="."]
@@ -295,7 +191,21 @@ grow_vertical = 2
 text = "MONET
 "
 
+[node name="RichTextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -41.0
+offset_right = 133.0
+offset_bottom = -1.0
+grow_vertical = 0
+text = "Money: 0$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TextureButton" to="VBoxContainer/TextureButton" method="_on_pressed"]
 [connection signal="pressed" from="PoliticanButton" to="." method="_on_politican_button_pressed"]
 [connection signal="pressed" from="MoneyButton" to="." method="_on_money_button_pressed"]
