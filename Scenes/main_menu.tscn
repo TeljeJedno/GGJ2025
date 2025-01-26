@@ -66,3 +66,4 @@ texture_hover = ExtResource("7_ux765")
 stretch_mode = 0
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
