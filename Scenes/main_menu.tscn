@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc5p0efle6pk2"]
+[gd_scene load_steps=9 format=3 uid="uid://cc5p0efle6pk2"]
 
-[ext_resource type="Texture2D" uid="uid://ddnrof1682vqg" path="res://Assets/UI/ffs.png" id="1_oqsny"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_5ptwp"]
+[ext_resource type="Texture2D" uid="uid://ddnrof1682vqg" path="res://Assets/UI/background.png" id="1_oqsny"]
 [ext_resource type="Texture2D" uid="uid://csmf24kb5uqcq" path="res://Assets/UI/play.png" id="2_n371w"]
 [ext_resource type="Texture2D" uid="uid://63h4n1d63hcm" path="res://Assets/UI/play_hover.png" id="3_mth8n"]
 [ext_resource type="Texture2D" uid="uid://c2qyv8nxl2ajg" path="res://Assets/UI/options.png" id="4_xik4k"]
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5ptwp")
 
 [node name="Panel" type="TextureRect" parent="."]
 layout_mode = 1
@@ -42,21 +44,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 9
 
-[node name="Button1" type="TextureButton" parent="VBoxContainer"]
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("2_n371w")
 texture_hover = ExtResource("3_mth8n")
 stretch_mode = 0
 
-[node name="Button2" type="TextureButton" parent="VBoxContainer"]
+[node name="Options" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("4_xik4k")
 texture_hover = ExtResource("5_8mac2")
 stretch_mode = 0
 
-[node name="Button3" type="TextureButton" parent="VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("6_lpshv")
