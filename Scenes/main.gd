@@ -2,18 +2,18 @@ extends Control
 
 
 @onready var timer:Timer =  $Timer
-@onready var label_rating:Label =  $Label
+@onready var rating_bar:ProgressBar = $Rating
 @onready var label_upgdg:Label =  $UpgradeDowngrade
 
 var RATING:float = 100
 var upgradeRate:float = 0
-var downgradeRate:float = 0
+var downgradeRate:float = -0.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
 	timer.start()
-	label_rating.text =  "Rating: " + ("%.2f" % RATING)
+
 	
 
 
@@ -25,14 +25,30 @@ func _process(delta):
 
 func _on_timer_timeout():
 	
-	calculateRating()
+	RATING = RATING + upgradeRate + downgradeRate
+	
+	updateRating()
 	timer.start()
 	
 
-func calculateRating():
-	RATING = RATING + upgradeRate + downgradeRate
-	
-	
+
+
+func updateRating():
 	if RATING <= 0.0:
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
-	label_rating.text =  "Rating: " + ("%.2f" % RATING)
+	rating_bar.value = RATING
+	rating_bar.get_child(0).text = "%.2f" % rating_bar.value
+
+func _on_texture_button_pressed():
+	print(self.name)
+	pass # Replace with function body.
+
+
+func _on_money_button_pressed():
+	RATING = RATING - 2;
+	updateRating()
+
+
+func _on_politican_button_pressed():
+	RATING = RATING + 0.05
+	updateRating()
