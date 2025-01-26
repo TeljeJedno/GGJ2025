@@ -53,7 +53,7 @@ func _on_money_button_pressed():
 
 func _on_politican_button_pressed():
 	RATING = RATING + 0.05
-	$PoliticanButton.scale = $PoliticanButton.scale  + Vector2(0.1,0.1)
+	#$PoliticanButton.scale = $PoliticanButton.scale  + Vector2(0.1,0.1)
 	updateRating()
 
 
